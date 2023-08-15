@@ -1,5 +1,5 @@
 ---
-title: DASGATEWAY - API Integration Manual
+title: DASGATEWAY - API 統合マニュアル
 
 toc_footers:
   - <a href='https://me.paymentoptions.com/login'>Powered by DASGATEWAY</a>
@@ -7,12 +7,11 @@ toc_footers:
 
 includes:
 #   - errors
+
 multiple_pages: true
 
 resources:
   - jp:'/jp/index.html'
- 
-
 
 search: true
 
@@ -23,27 +22,24 @@ meta:
     content: Documentation for the DASGATEWAY API
 ---
 
-# Introduction
+# 導入
 
-Welcome to the DASGATEWAY API Integration Manual.
+DASGATEWAY API 統合マニュアルへようこそ。
 
-The API is designed around the REST architectural style; providing a set of HTTP payloads to facilitate the
-interaction between third party software and DASGATEWAY. To ensure compatibility, the API provides resource
-oriented URLs which uses built-in HTTP features like HTTP authentication, HTTP verbs or HTTP response codes
-which are understood by the majority of HTTP clients.
+API は REST アーキテクチャ スタイルに基づいて設計されています。第三者ソフトウェアとDASGATEWAY間の相互作用を促進するために一組のHTTPペイロードを提供することです。互換性を確保するために、API は多数のHTTPクライアントによって理解されるHTTP認証、HTTP動詞またはHTTPレスポンスコードのようなビルトインHTTP特徴を働かせる資源を指向するURLを提供します。
+
 
 ```shell
-    The API is accessible only via https with the following base URL
-    LIVE URL (https://api.paymentoptions.com)
+    APIは以下のベースURLでhttpsを通してアクセスできます。
+    LIVEライブ URL (https://api.paymentoptions.com)
 ```
 
-## Using the API reference
+## API リファレンスの使用
 
-The API reference is ordered by payloads. A description of the different payloads and a few examples are provided.
-While the examples are limited to a few development languages, the same principle can be applied to any
-language which has access to a HTTP client.
+API リファレンスはペイロードに並べられています。 さまざまなペイロードの説明といくつかの例が提供されています。.
+例はいくつかの開発言語に限れていますが、HTTP クライアントにアクセスできるすべての言語に同じ原則を適用できます。
 
-# Authentication
+# 認証
 
 ## API Key
 The API key is used for authorization and authentication; and will determine if the API will execute the request or

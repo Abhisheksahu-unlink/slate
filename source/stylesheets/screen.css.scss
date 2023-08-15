@@ -2,6 +2,7 @@
 @import 'normalize';
 @import 'variables';
 @import 'icon-font';
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800;900&display=swap');
 // @import 'rtl'; // uncomment to switch to RTL format
 
 /*
@@ -34,6 +35,7 @@ html, body {
   background-color: $main-bg;
   height: 100%;
   -webkit-text-size-adjust: none; /* Never autoresize text */
+  font-family: 'Outfit', sans-serif;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -58,7 +60,7 @@ html, body {
   left: 0;
   bottom: 0;
   width: $nav-width;
-  background-color: $nav-bg;
+  background-color: #0b1c2d;
   font-size: 13px;
   font-weight: bold;
 
@@ -74,31 +76,32 @@ html, body {
   // This is the logo at the top of the ToC
   .logo {
     display: block;
-    max-width: 100%;
+    max-width: 90%;
     margin-bottom: $logo-margin;
+    padding: 10px 10px;
   }
 
   &>.search {
     position: relative;
 
     input {
-      background: $nav-bg;
-      border-width: 0 0 1px 0;
+      background: #fff;
+      border-width: 0 0 0px 0;
       border-color: $search-box-border-color;
-      padding: 6px 0 6px 20px;
+      padding: 10px 0 10px 30px;
       box-sizing: border-box;
       margin: $nav-v-padding $nav-padding;
       width: $nav-width - ($nav-padding*2);
       outline: none;
-      color: $nav-text;
-      border-radius: 0; /* ios has a default border radius */
+      color: #555;
+      border-radius: 5px; /* ios has a default border radius */
     }
 
     &:before {
       position: absolute;
-      top: 17px;
-      left: $nav-padding;
-      color: $nav-text;
+      top: 21px;
+      left: 25px;
+      color: #555;
       @extend %icon-search;
     }
   }
@@ -141,7 +144,7 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
+    line-height: 36px;
   }
 
   li {
@@ -167,11 +170,22 @@ html, body {
     display: none;
     background-color: $nav-subitem-bg;
     font-weight: 500;
+    position: relative;
   }
 
   .toc-h2 {
-    padding-left: $nav-padding + $nav-indent;
+    padding-left: 40px;
     font-size: 12px;
+    position: relative;
+    &:before{
+        background: #fff;
+        position: absolute;
+        width: 14px;
+        height: 1px;
+        content: "";
+        left: 17px;
+        top: 18px;
+    }
   }
 
   .toc-footer {
@@ -182,6 +196,17 @@ html, body {
     li,a {
       color: $nav-text;
       text-decoration: none;
+      padding: 0px 0px !important;
+    display: inline-flex !IMPORTANT;
+    margin: 0 15px 0 10px !important;
+    }
+    li,a,p {
+      color: $nav-text;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 0 0 5px;
+      padding: 0;
+      position: relative;
     }
 
     a:hover {
@@ -189,9 +214,10 @@ html, body {
     }
 
     li {
-      font-size: 0.8em;
+      font-size: 1em;
       line-height: 1.7;
       text-decoration: none;
+      display: inline-flex;
     }
   }
 }
@@ -207,6 +233,8 @@ html, body {
   transition-property: background;
   transition-timing-function: linear;
   transition-duration: 130ms;
+  font-weight: 500;
+  letter-spacing: .03em;
 }
 
 // button to show navigation on mobile devices
@@ -251,7 +279,7 @@ html, body {
   margin-left: $nav-width;
   position: relative;
   z-index: 10;
-  background-color: $main-bg;
+  background-color: #ffffff;
   min-height: 100%;
 
   padding-bottom: 1px; // prevent margin overflow
@@ -263,7 +291,7 @@ html, body {
   // half of the content always this background color.
   .dark-box {
     width: $examples-width;
-    background-color: $examples-bg;
+    background-color: #0b151e;
     position: absolute;
     right: 0;
     top: 0;
@@ -347,14 +375,19 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 25px;
+    font-size: 21px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Outfit', sans-serif;
+
   }
 
   h1:first-child, div:first-child + h1 {
@@ -400,6 +433,7 @@ html, body {
   table {
     margin-bottom: 1em;
     overflow: auto;
+    border-collapse: inherit;
     th,td {
       text-align: left;
       vertical-align: top;
@@ -548,7 +582,7 @@ html, body {
 
   blockquote {
     &>p {
-      background-color: $code-annotation-bg;
+      background-color: #1a3149;
       padding: $code-annotation-padding 2em;
       color: #eee;
     }
@@ -625,7 +659,7 @@ html, body {
 
 .copy-clipboard {
   float: right;
-  fill: #9DAAB6;
+  fill: #fff;
   cursor: pointer;
   opacity: 0.4;
   height: 18px;
